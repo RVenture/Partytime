@@ -1,0 +1,1 @@
+while true; do osascript -e 'tell application "Messages" to send "I love my nins." to buddy "Ryan"'; done

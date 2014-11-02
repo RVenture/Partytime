@@ -18,6 +18,7 @@
 		002DA3671960F32400E4324A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 002DA3461960F32400E4324A /* Cocoa.framework */; };
 		002DA36F1960F32400E4324A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 002DA36D1960F32400E4324A /* InfoPlist.strings */; };
 		002DA3711960F32400E4324A /* PartytimeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 002DA3701960F32400E4324A /* PartytimeTests.m */; };
+		002DA37B1960FD4100E4324A /* party.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 002DA37A1960FD4100E4324A /* party.scpt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		002DA36C1960F32400E4324A /* PartytimeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PartytimeTests-Info.plist"; sourceTree = "<group>"; };
 		002DA36E1960F32400E4324A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		002DA3701960F32400E4324A /* PartytimeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PartytimeTests.m; sourceTree = "<group>"; };
+		002DA37A1960FD4100E4324A /* party.scpt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = party.scpt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				002DA34E1960F32400E4324A /* Partytime-Info.plist */,
+				002DA37A1960FD4100E4324A /* party.scpt */,
 				002DA34F1960F32400E4324A /* InfoPlist.strings */,
 				002DA3521960F32400E4324A /* main.m */,
 				002DA3541960F32400E4324A /* Partytime-Prefix.pch */,
@@ -230,6 +233,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				002DA37B1960FD4100E4324A /* party.scpt in Resources */,
 				002DA3511960F32400E4324A /* InfoPlist.strings in Resources */,
 				002DA35F1960F32400E4324A /* Images.xcassets in Resources */,
 				002DA3571960F32400E4324A /* Credits.rtf in Resources */,
