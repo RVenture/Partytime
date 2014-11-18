@@ -11,13 +11,11 @@
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 
 @property (assign) IBOutlet NSWindow *window;
-@property (weak) IBOutlet NSTextField *textField;
+@property (nonatomic, retain) IBOutlet NSTextField *textField;
+@property (nonatomic, retain) IBOutlet NSTextField *mTextField;
+@property (nonatomic, retain) IBOutlet NSTextField *nTextField;
+@property (nonatomic, retain) IBOutlet NSButton *button;
 
-- (void)keyDown:(NSEvent *)event;
-
-- (IBAction)takeNameOfUserFrom:(id)sender;
-
-
-
+- (IBAction)pushButton:(id)sender;
 
 @end

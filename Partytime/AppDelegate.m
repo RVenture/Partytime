@@ -10,18 +10,40 @@
 
 @implementation AppDelegate
 
-int x = 1;
-
+@synthesize window;
+@synthesize textField;
+@synthesize mTextField;
+@synthesize nTextField;
+@synthesize button;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     // Insert code here to initialize your application
     
-}
-
+    [window setOpaque:NO];
+    [window setAlphaValue:0.96];
+    
+    NSColor *insertionPointColor = [NSColor whiteColor];
+    
+    NSTextView *fieldEditor = (NSTextView*)[self.textField.window fieldEditor:YES
+                                                                    forObject:self.textField];
+    fieldEditor.insertionPointColor = insertionPointColor;
+    
+    NSColor *color = [NSColor whiteColor];
+    NSMutableAttributedString *colorTitle =
+    [[NSMutableAttributedString alloc] initWithAttributedString:[button attributedTitle]];
+    
+    NSRange titleRange = NSMakeRange(0, [colorTitle length]);
+    
+    [colorTitle addAttribute:NSForegroundColorAttributeName
+                       value:color
+                       range:titleRange];
+    
+    [button setAttributedTitle:colorTitle];}
 
 - (BOOL)acceptsFirstResponder {
     return YES;
+    
 }
 
 - (void)keyDown: (NSEvent *) event {
@@ -32,64 +54,32 @@ int x = 1;
     
 }
 
--(void)controlTextDidEndEditing:(NSNotification *)notification
-{
-    // See if it was due to a return
-    if ( [[[notification userInfo] objectForKey:@"NSTextMovement"] intValue] == NSReturnTextMovement )
-    {
-        NSLog(@"Return was pressed!");
-    }
-}
-
-
-- (void)control:(NSControl *)control textView:(NSTextView *)fieldEditor doCommandBySelector:(SEL)commandSelector
-{
-    NSLog(@"Selector method is (%@)", NSStringFromSelector( commandSelector ) );
-    if (commandSelector == @selector(insertNewline:)) {
-        //Do something against ENTER key
-        NSLog(@"Return was pressed!");
-        
-    } else if (commandSelector == @selector(deleteForward:)) {
-        //Do something against DELETE key
-        NSLog(@"Return was pressed!");
-        
-    } else if (commandSelector == @selector(deleteBackward:)) {
-        //Do something against BACKSPACE key
-        NSLog(@"Return was pressed!");
-        
-    } else if (commandSelector == @selector(insertTab:)) {
-        //Do something against TAB key
-        NSLog(@"Return was pressed!");
-    }
-}
-
-
-- (IBAction)takeNameOfUserFrom:(id)sender {
+- (IBAction)pushButton:(id)sender {
     
-    NSString *newUser = [sender stringValue];
+    
+    NSString *newUser = [textField stringValue];
     NSLog(@"%@", newUser);
     
+    NSString *newMessage = [mTextField stringValue];
+    NSLog(@"%@", newMessage);
+    
+    int number = [nTextField.stringValue intValue];
+    
     NSDictionary *error = [NSDictionary new];
-  
-    NSString *script3 = [NSString stringWithFormat:@"tell application \"Messages\" to send \"Nin\" to buddy \"%@\"", newUser ];
     
-    for (int x = 1; x < 1000; x++ ) {
+    NSString *script3 = [NSString stringWithFormat:@"tell application \"Messages\" to send \"%@\" to buddy \"%@\"", newMessage, newUser ];
     
-    NSAppleScript *appleScript = [[NSAppleScript new] initWithSource:script3];
-    
-    if ([appleScript executeAndReturnError:&error]) {
-        NSLog(@"success!");
-    } else {
-        NSLog(@"failure!");
-    }
+    for (int x = 0; x < number; x++ ) {
         
-    }
+        NSAppleScript *appleScript = [[NSAppleScript new] initWithSource:script3];
+        
+        if ([appleScript executeAndReturnError:&error]) {
+            NSLog(@"success!");
+        } else {
+            NSLog(@"failure!");
+        }
     
+    }
 }
-
-
-
-
-
 
 @end

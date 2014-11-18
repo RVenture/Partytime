@@ -52,6 +52,7 @@
 		002DA36E1960F32400E4324A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		002DA3701960F32400E4324A /* PartytimeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PartytimeTests.m; sourceTree = "<group>"; };
 		002DA37A1960FD4100E4324A /* party.scpt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = party.scpt; sourceTree = "<group>"; };
+		00DC14F91A0B4B5F00FF340E /* Partytime.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Partytime.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +118,7 @@
 		002DA34C1960F32400E4324A /* Partytime */ = {
 			isa = PBXGroup;
 			children = (
+				00DC14F91A0B4B5F00FF340E /* Partytime.entitlements */,
 				002DA3581960F32400E4324A /* AppDelegate.h */,
 				002DA3591960F32400E4324A /* AppDelegate.m */,
 				002DA35B1960F32400E4324A /* MainMenu.xib */,
@@ -204,6 +206,14 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Ryan Holmes";
 				TargetAttributes = {
+					002DA3421960F32400E4324A = {
+						DevelopmentTeam = F9HH8Q85C2;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 0;
+							};
+						};
+					};
 					002DA3631960F32400E4324A = {
 						TestTargetID = 002DA3421960F32400E4324A;
 					};
@@ -389,10 +399,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Partytime/Partytime-Prefix.pch";
 				INFOPLIST_FILE = "Partytime/Partytime-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -402,10 +414,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Partytime/Partytime-Prefix.pch";
 				INFOPLIST_FILE = "Partytime/Partytime-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -470,6 +484,7 @@
 				002DA3761960F32400E4324A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		002DA3771960F32400E4324A /* Build configuration list for PBXNativeTarget "PartytimeTests" */ = {
 			isa = XCConfigurationList;
@@ -478,6 +493,7 @@
 				002DA3791960F32400E4324A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
